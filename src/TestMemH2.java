@@ -17,6 +17,8 @@ public class TestMemH2 {
 	  Connection conn = DriverManager.
 	      getConnection("jdbc:h2:tcp://localhost/mem:test2", "sa", "");
 	  // add application code here
+	  
+	  
 	  Statement stmt = conn.createStatement();
 	  
 	  stmt.executeUpdate("CREATE TABLE TEST_MEM(ID INT PRIMARY KEY,NAME VARCHAR(255));");
