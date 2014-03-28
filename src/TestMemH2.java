@@ -16,7 +16,7 @@ public class TestMemH2 {
 	  Class.forName("org.h2.Driver");
 	  Connection conn = DriverManager.
 	      getConnection("jdbc:h2:tcp://localhost/mem:test2", "sa", "");
-	  // add application code here add application code here
+	  // add application
 	  
 	  
 	  Statement stmt = conn.createStatement();
