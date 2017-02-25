@@ -1,0 +1,47 @@
+准备：
+1.Tomcat 7
+2.Mysql5	root	 123456  
+	建库jeesite，导入数据。
+3.eclipse4
+
+一、配置MAVEN
+1. 设置set MAVEN_HOME
+2. 设置资源库位置：
+	%MAVEN_HOME%\conf\settings.xml
+	<localRepository>/home/dcb/repository</localRepository>
+3.与eclipse集成：
+                                                                                
+    a）有 Maven 插件：Window --^> Preferences --^> Maven                             
+       --^> User Settings --^> 点击 Browse... 按钮，选择你的                             
+       %MAVEN_HOME%\conf\settings.xml 文件。                                       
+                                                                                
+    b）没有 Maven 插件：Window --^> Preferences --^> Java                             
+       --^> Bulid Path --^> Classpath Variables --^> 点击 new... 按钮               
+       Name：M2_REPO                                                             
+       Path：%cd%\repository                                                     
+4.生成Eclipse工程文件
+	mvn eclipse:clean eclipse:eclipse
+5.参考 jeesite/doc/《介绍与安装.docx》
+   登陆名： thinkgem 123
+
+二、生成代码
+1.ER建模
+ 	修改db/test/newfile.erm，可参考db/test/jeesite.erm
+
+2.导出DDL到Mysql中生成表结构。
+	newfile.erm 中右键导出。
+
+3.进入后台
+	 代码生成——业务表配置：表字段类型--->Java实体属性类型--->页面表单类型 对应关系。
+				方案配置：模块名称
+4.重启系统。
+5.新建菜单
+	上 顶级
+	左一级
+		左二级 ：链接=/rsb/rsinfo
+			隐藏：查看	rsb:rsinfo:view
+				    删除	rsb:rsinfo:edit
+
+
+6.为角色分配菜单功能。
+7.为用户分配角色。
